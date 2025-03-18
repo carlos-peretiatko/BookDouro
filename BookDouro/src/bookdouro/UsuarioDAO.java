@@ -15,9 +15,9 @@ public class UsuarioDAO {
             stmt.setString(2, Nome_usuario);
             stmt.setString(3, Email_usuario);
             stmt.setString(4, Telefone_usuario);
-            stmt.setString(4, Endereco_usuario);
-            stmt.setString(4, Senha_usuario);
-            stmt.setString(4, Funcao);
+            stmt.setString(5, Endereco_usuario);
+            stmt.setString(6, Senha_usuario);
+            stmt.setString(7, Funcao);
             stmt.executeUpdate();
             System.out.println("Usuário inserido com sucesso!");
 
