@@ -1,6 +1,8 @@
 package java;
 
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Main {
@@ -121,6 +123,56 @@ public class Main {
 			}
 		}
 	}
+
+	//listar clientes
+	public static void listarUsuarios() {
+        String sql = "SELECT * FROM mydb.Usuario";
+
+        try (Connection conexao = ConnectionDataBase.conectar();
+             PreparedStatement stmt = conexao.prepareStatement(sql);
+             var rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                System.out.println("CPF: " + rs.getString("CPF_usuario"));
+                System.out.println("Nome: " + rs.getString("Nome_usuario"));
+                System.out.println("Email: " + rs.getString("Email_usuario"));
+                System.out.println("Telefone: " + rs.getString("Telefone_usuario"));
+                System.out.println("Endereço: " + rs.getString("Endereco_usuario"));
+                System.out.println("Senha" + rs.getString("Senha_usuario"));
+                System.out.println("Função: " + rs.getString("Funcao"));
+                System.out.println("------------------------");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+	
+	//listar livros
+	public static void listarLivros() {
+        String sql = "SELECT * FROM mydb.Livro";
+
+        try (Connection conexao = ConnectionDataBase.conectar();
+             PreparedStatement stmt = conexao.prepareStatement(sql);
+             var rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+				System.out.println("------------------------");
+                System.out.println("ISBN: " + rs.getString("ISBN"));
+                System.out.println("Titulo: " + rs.getString("Titulo"));
+                System.out.println("Autor(s): " + rs.getString("Autor"));
+                System.out.println("Gênero: " + rs.getString("Genero"));
+                System.out.println("Editora: " + rs.getString("Editora"));
+                System.out.println("Número de Exemplares: " + rs.getInt("Numero_de_exemplares"));
+                System.out.println("Ano de Publicação: " + rs.getInt("Ano_de_publicacao"));
+                System.out.println("------------------------");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }
 
 	public static void cadastrarEmprestimo() {
 		
