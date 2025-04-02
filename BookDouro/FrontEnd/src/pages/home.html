@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - BookDouro</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://paroquiansdaconceicao.net.br/wp-content/uploads/2021/10/featured-livro.jpg" alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="#"><i class="icon">🏠</i>Home</a></li>
+                <li><a href="#"><i class="icon">📚</i>Livros</a></li>
+                <li><a href="#"><i class="icon">👥</i>Usuários</a></li>
+                <li><a href="#"><i class="icon">📝</i>Empréstimos</a></li>
+                <li><a href="#"><i class="icon">📊</i>Relatórios</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <img src="../assets/avatar.png" alt="User Avatar">
+            <span>Nome do Usuário</span>
+            <a href="login.html" class="logout">Sair</a>
+        </div>
+    </div>
+
+    <main class="content">
+        <header>
+            <div class="search-bar">
+                <input type="search" placeholder="Pesquisar...">
+                <button>🔍</button>
+            </div>
+            <div class="user-actions">
+                <button class="notification">🔔</button>
+                <button class="settings">⚙️</button>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total de Livros</h3>
+                    <p class="number">150</p>
+                    <p class="trend positive">↑ 5%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Empréstimos Ativos</h3>
+                    <p class="number">45</p>
+                    <p class="trend negative">↓ 2%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Usuários Ativos</h3>
+                    <p class="number">89</p>
+                    <p class="trend positive">↑ 12%</p>
+                </div>
+            </div>
+
+            <div class="recent-activities">
+                <h2>Atividades Recentes</h2>
+                <div class="activity-list">
+                <!--chamar java script-->
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
