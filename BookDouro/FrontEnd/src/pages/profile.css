@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #e6ecf5;
+}
+
+.sidebar {
+    width: 250px;
+    background: #b0c4de;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #fff;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    background: #4a6cf7;
+    color: white;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.icon-eye {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.book-section {
+    margin-bottom: 30px;
+}
+
+.book-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.book-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox */
+}
+
+.book-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.book-card {
+    flex: 0 0 150px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
