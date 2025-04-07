@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade - BookDouro</title>
+    <link rel="stylesheet" href="access.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://paroquiansdaconceicao.net.br/wp-content/uploads/2021/10/featured-livro.jpg" alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="icon">🏠</i>Página Inicial</a></li>
+                <li><a href="pendency.html"><i class="icon">📄</i>Pendências</a></li>
+                <li><a href="history.html"><i class="icon">📖</i>Histórico</a></li>
+                <li><a href="search.html"><i class="icon">🔍</i>Pesquisa</a></li>
+                <li class="active"><a href="#"><i class="icon">♿</i>Acessibilidade</a></li>
+                <li><a href="loan.html"><i class="icon">📚</i>Empréstimos</a></li>
+                <li><a href="profile.html"><i class="icon">👤</i>Meu Perfil</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="access-header">
+            <h1>♿ Acessibilidade</h1>
+        </div>
+
+        <section class="access-section">
+            <h2>Filtros de Acessibilidade:</h2>
+            <div class="filter-container">
+                <button class="filter-button">Filtro <i class="icon">🔽</i></button>
+                <div class="filter-options">
+                    <div>No último ano</div>
+                    <div>No último mês</div>
+                    <div>Na última semana</div>
+                    <div>Ordem Alfabética (A - Z)</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="access.js"></script>
+</body>
+</html>
