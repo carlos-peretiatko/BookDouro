@@ -1,5 +1,4 @@
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&section=header&animation=fadeIn&fontAlignY=45"/>
-
 # Book D'ouro - Sistema de Biblioteca
 
 ## Descrição
@@ -29,10 +28,8 @@ Este projeto foi desenvolvido como parte da disciplina de **Desenvolvimento de S
 - **Framework:** React
 
 ### Backend
-- **Node.js**
-- **Framework:** Express
-- **Banco de dados:** MongoDB
-- **Autenticação:** JWT
+- **JAVA**
+- **Banco de dados:** MySQL
 
 ---
 
@@ -116,5 +113,4 @@ Este projeto está licenciado sob a licença **MIT**. Veja o arquivo ```LICENSE`
 - Carlos Eduardo Peretiatko
 - André Nazário
 - Vinicius Custódio
-
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&section=footer&animation=fadeIn&fontAlignY=65"/>
