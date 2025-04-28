@@ -1,36 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Pegar o ID do livro da URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const bookId = urlParams.get('id');
+    const bookISBN = new URLSearchParams(window.location.search).get('isbn');
 
-    // Simular dados do livro (substitua por uma chamada à API real)
-    const bookData = {
-        id: bookId,
-        title: 'Call of Cthulhu',
-        author: 'H. P. Lovecraft',
-        genre: 'Horror',
-        year: '1920',
-        isbn: '9780345534521',
-        publisher: 'Arkham House',
-        availability: 'Disponível',
-        description: 'Call of Cthulhu é um conto de horror do autor americano H. P. Lovecraft, escrito em 1926 e publicado pela primeira vez na revista Weird Tales em 1928.',
-        coverUrl: 'https://www.hu3br.com/wp-content/uploads/2018/11/call-of-chtulhu-analise-6.jpg'
-    };
+    // Buscar detalhes do livro pelo ISBN
+    fetch(`http://localhost:8080/api/livros/${bookISBN}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('bookCover').src = data.coverUrl;
+            document.getElementById('bookTitle').textContent = data.title;
+            document.getElementById('bookAuthor').textContent = data.author;
+            document.getElementById('bookGenre').textContent = data.genre;
+            document.getElementById('bookYear').textContent = data.year;
+            document.getElementById('bookISBN').textContent = data.isbn;
+            document.getElementById('bookPublisher').textContent = data.publisher;
+            document.getElementById('bookAvailability').textContent = data.availability ? 'Disponível' : 'Indisponível';
+            document.getElementById('bookDescription').textContent = data.description;
+        })
+        .catch(error => console.error('Erro ao buscar detalhes do livro:', error));
+});
 
-    // Preencher os dados na página
-    document.getElementById('bookCover').src = bookData.coverUrl;
-    document.getElementById('bookTitle').textContent = bookData.title;
-    document.getElementById('bookAuthor').textContent = bookData.author;
-    document.getElementById('bookGenre').textContent = bookData.genre;
-    document.getElementById('bookYear').textContent = bookData.year;
-    document.getElementById('bookISBN').textContent = bookData.isbn;
-    document.getElementById('bookPublisher').textContent = bookData.publisher;
-    document.getElementById('bookAvailability').textContent = bookData.availability;
-    document.getElementById('bookDescription').textContent = bookData.description;
+// Registrar empréstimo
+document.querySelector('.borrow-button').addEventListener('click', () => {
+    const bookISBN = document.getElementById('bookISBN').textContent;
 
-    // Adicionar evento ao botão de empréstimo
-    const borrowButton = document.querySelector('.borrow-button');
-    borrowButton.addEventListener('click', () => {
-        alert('Funcionalidade de empréstimo será implementada em breve!');
-    });
+    fetch('http://localhost:8080/api/emprestimos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            usuarioId: 1, // Substituir pelo ID do usuário logado
+            livroISBN: bookISBN,
+            dataInicio: new Date().toISOString().split('T')[0],
+            dataDevolucao: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+        })
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Empréstimo registrado com sucesso!');
+            } else {
+                alert('Erro ao registrar empréstimo.');
+            }
+        })
+        .catch(error => console.error('Erro ao registrar empréstimo:', error));
+});
+
+document.getElementById('submitReview').addEventListener('click', () => {
+    const reviewText = document.getElementById('reviewText').value;
+    const bookISBN = document.getElementById('bookISBN').textContent;
+
+    fetch(`http://localhost:8080/api/livros/${bookISBN}/reviews`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuarioId: 1, review: reviewText }) // Substituir pelo ID do usuário logado
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('Avaliação enviada com sucesso!');
+            } else {
+                alert('Erro ao enviar avaliação.');
+            }
+        })
+        .catch(error => console.error('Erro ao enviar avaliação:', error));
 });
