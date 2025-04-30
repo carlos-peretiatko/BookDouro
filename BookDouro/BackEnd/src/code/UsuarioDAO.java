@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
-    public static void inserirUsuario(String CPF_usuario, String Nome_usuario, String Email_usuario, String Telefone_usuario, String Endereco_usuario, String Senha_usuario, String Funcao) {
+    public static void inserirUsuario(String CPF_usuario, String Nome_usuario, String Email_usuario,
+            String Telefone_usuario, String Endereco_usuario, String Senha_usuario, String Funcao) {
         String sql = "INSERT INTO mydb.usuario (CPF_usuario, Nome_usuario, Email_usuario, Telefone_usuario, Endereco_usuario, Senha_usuario, Funcao) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conexao = ConnectionDataBase.conectar();
-             PreparedStatement stmt = conexao.prepareStatement(sql)) {
+                PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
             stmt.setString(1, CPF_usuario);
             stmt.setString(2, Nome_usuario);

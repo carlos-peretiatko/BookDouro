@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class LivroDAO {
-    public static void inserirUsuario(String ISBN, String Titulo, String Autor, String Genero, String Editora, int Numero_de_exemplares, int Ano_de_publicacao) {
+    public static void inserirLivro(String ISBN, String Titulo, String Autor, String Genero, String Editora, int Numero_de_exemplares, int Ano_de_publicacao) {
         String sql = "INSERT INTO mydb.livro (ISBN, Titulo, Autor, Genero, Editora, Numero_de_exemplares, Ano_de_publicacao) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conexao = ConnectionDataBase.conectar();
@@ -25,5 +25,4 @@ public class LivroDAO {
             e.printStackTrace();
         }
     }
-
 }
