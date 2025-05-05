@@ -33,6 +33,13 @@ public class Emprestimo {
         Data_Devolucao = data_Devolucao;
     }
 
+    // ⠀⠀⠀⠀⣀⣤⣤⣶⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀
+    // ⣀⣴⣶⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⣀⣴⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀
+    // ⠁⠀⠀⠈⠉⠛⣿⣿⣿⣿⣿⣷⣦⣀⢠⣆⣸⡆⢀⣤⣾⣿⣿⣿⣿⣿⠟⠋⠉⠀⠀⠀⠀
+    // ⠀⠀⠀⠀⠀⠀⠸⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠏⠀⠀⠀⠀⠀⠀⠀
+    // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
     // cadastros
     public static void cadastrarEmprestimo(Scanner scanner) {
         EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
@@ -79,50 +86,7 @@ public class Emprestimo {
         }
     }
 
-    // ler
-    public static void listarEmprestimos() {
-        String sql = "SELECT * FROM mydb.Emprestimo";
+    
 
-        try (Connection conexao = ConnectionDataBase.conectar();
-                PreparedStatement stmt = conexao.prepareStatement(sql);
-                var rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                System.out.println("------------------------");
-                System.out.println("Código do Empréstimo: " + rs.getInt("Codigo_emprestimo"));
-                System.out.println("ID do Usuário: " + rs.getInt("Usuario_Id_usuario"));
-                System.out.println("ISBN do Livro: " + rs.getString("Livro_ISBN"));
-                System.out.println("Data de Início: " + rs.getString("Data_de_inicio"));
-                System.out.println("Data de Devolução: " + rs.getString("Data_de_devolucao"));
-                System.out.println("------------------------");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // excluir
-    public static void excluirEmprestimo(Scanner scanner) {
-        System.out.println("Informe o Código do Empréstimo que deseja excluir: ");
-        int codigoEmprestimo = scanner.nextInt();
-
-        String sql = "DELETE FROM mydb.Emprestimo WHERE Codigo_emprestimo = ?";
-
-        try (Connection conexao = ConnectionDataBase.conectar();
-                PreparedStatement stmt = conexao.prepareStatement(sql)) {
-
-            stmt.setInt(1, codigoEmprestimo);
-
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Empréstimo excluído com sucesso!");
-            } else {
-                System.out.println("Empréstimo não encontrado.");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    
 }

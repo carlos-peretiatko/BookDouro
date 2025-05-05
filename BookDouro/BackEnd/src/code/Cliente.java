@@ -164,11 +164,25 @@ public class Cliente {
         Senha = senha;
     }
 
+        // ⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠒⠒⠒⢛⣒⠒⠒⠦⢤⣀⠀⠀⠀⠀
+        // ⠀⣤⡀⠀⢀⡴⠚⠁⠀⠀⠀⡠⢊⠵⡈⡆⠀⠀⠀⠈⢱⠆⠀⠀
+        // ⡜⡷⢱⠔⠁⠀⠀⠀⠀⠀⠊⠰⠇⣀⡇⡇⢀⠀⢀⣠⠏⠀⠀⠀
+        // ⣇⣧⡋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠇⠈⠙⠛⢤⡀⠀⠀⠀
+        // ⢘⡏⠀⠀⠀⠀⠀⠰⠊⢀⡠⢄⡀⠀⠀⠀⠀⠀⠀⠀⠙⢦⠀⠀
+        // ⢸⢰⠋⢢⠀⠀⠀⠀⡔⢁⣤⡀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⢳⡀
+        // ⠈⡇⢰⡟⢳⡀⢀⠎⠀⡿⣄⣼⠀⠇⠀⠀⠀⠀⠠⡄⠀⠀⠀⣳
+        // ⠀⠰⡸⣽⣿⣈⣁⣀⠀⠙⠿⢃⡼⠲⡀⠀⠀⠀⠀⠹⡍⠉⠉⠁
+        // ⠀⠀⢵⠒⠋⠿⠗⠀⠉⠉⠉⡩⠀⢀⡇⠀⠀⠀⠀⠀⢧⠀⠀⠀
+        // ⠀⠀⠘⠢⣄⡀⠀⠀⠀⠀⣉⣠⠴⠋⠀⣀⣀⡀⠀⠀⡞⠀⠀⠀
+        // ⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠉⠑⠦⠃⠀⠀⠀
+    
+        //login e cadastro I
+        //                 V
+
     // metodo para cadastrar cliente
-    public static void cadastrarCliente() {
+    public static void cadastrarCliente(Scanner scanner) {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Cliente Cliente = new Cliente();
-        Scanner scanner = new Scanner(System.in);
 
         char resposta = 'S';
         char alcapao = 'x';
@@ -227,125 +241,37 @@ public class Cliente {
             }
         }
     }
-
-    // listar clientes
-    public static void listarUsuarios() {
-        String sql = "SELECT * FROM mydb.Usuario";
-
-        try (Connection conexao = ConnectionDataBase.conectar();
-                PreparedStatement stmt = conexao.prepareStatement(sql);
-                var rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                System.out.println("CPF: " + rs.getString("CPF_usuario"));
-                System.out.println("Nome: " + rs.getString("Nome_usuario"));
-                System.out.println("Email: " + rs.getString("Email_usuario"));
-                System.out.println("Telefone: " + rs.getString("Telefone_usuario"));
-                System.out.println("Endereço: " + rs.getString("Endereco_usuario"));
-                System.out.println("Senha" + rs.getString("Senha_usuario"));
-                System.out.println("Função: " + rs.getString("Funcao"));
-                System.out.println("------------------------");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // editar
-    public static void editarCliente(Scanner scanner) {
-        System.out.println("Informe o CPF do cliente que deseja editar: ");
+    
+    // login
+    public static boolean loginUsuario(Scanner scanner) {
+        System.out.println("Informe seu CPF: ");
         String cpf = scanner.nextLine();
 
-        System.out.println("Informe o novo Nome: ");
-        String nome = scanner.nextLine();
-        System.out.println("Informe o novo Email: ");
-        String email = scanner.nextLine();
-        System.out.println("Informe o novo Telefone: ");
-        String telefone = scanner.nextLine();
-        System.out.println("Informe o novo Endereço: ");
-        String endereco = scanner.nextLine();
-        System.out.println("Informe a nova Função: ");
-        String funcao = scanner.nextLine();
+        System.out.println("Informe sua senha: ");
+        String senha = scanner.nextLine();
 
-        String sql = "UPDATE mydb.Usuario SET Nome_usuario = ?, Email_usuario = ?, Telefone_usuario = ?, Endereco_usuario = ?, Funcao = ? WHERE CPF_usuario = ?";
-
-        try (Connection conexao = ConnectionDataBase.conectar();
-                PreparedStatement stmt = conexao.prepareStatement(sql)) {
-
-            stmt.setString(1, nome);
-            stmt.setString(2, email);
-            stmt.setString(3, telefone);
-            stmt.setString(4, endereco);
-            stmt.setString(5, funcao);
-            stmt.setString(6, cpf);
-
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Cliente atualizado com sucesso!");
-            } else {
-                System.out.println("Cliente não encontrado.");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // excluir
-    public static void excluirCliente(Scanner scanner) {
-        System.out.println("Informe o CPF do cliente que deseja excluir: ");
-        String cpf = scanner.nextLine();
-
-        String sql = "DELETE FROM mydb.Usuario WHERE CPF_usuario = ?";
+        String sql = "SELECT * FROM mydb.Usuario WHERE CPF_usuario = ? AND Senha_usuario = ?";
 
         try (Connection conexao = ConnectionDataBase.conectar();
                 PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
             stmt.setString(1, cpf);
+            stmt.setString(2, senha);
 
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Cliente excluído com sucesso!");
-            } else {
-                System.out.println("Cliente não encontrado.");
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    System.out.println("Login bem-sucedido! Bem-vindo, " + rs.getString("Nome_usuario") + "!");
+                    return true;
+                } else {
+                    System.out.println("CPF ou senha incorretos. Tente novamente.");
+                    return false;
+                }
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
-
-    //login
-    public static boolean loginUsuario(Scanner scanner) {
-    System.out.println("Informe seu CPF: ");
-    String cpf = scanner.nextLine();
-
-    System.out.println("Informe sua senha: ");
-    String senha = scanner.nextLine();
-
-    String sql = "SELECT * FROM mydb.Usuario WHERE CPF_usuario = ? AND Senha_usuario = ?";
-
-    try (Connection conexao = ConnectionDataBase.conectar();
-         PreparedStatement stmt = conexao.prepareStatement(sql)) {
-
-        stmt.setString(1, cpf);
-        stmt.setString(2, senha);
-
-        try (ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-                System.out.println("Login bem-sucedido! Bem-vindo, " + rs.getString("Nome_usuario") + "!");
-                return true;
-            } else {
-                System.out.println("CPF ou senha incorretos. Tente novamente.");
-                return false;
-            }
-        }
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-        return false;
-    }
-}
 
 }

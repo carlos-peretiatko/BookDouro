@@ -24,7 +24,7 @@ public class Main {
 					loggedIn = Cliente.loginUsuario(scanner);
 					break;
 				case 2:
-					Cliente.cadastrarCliente();
+					Cliente.cadastrarCliente(scanner);
 					break;
 				case 3:
 					System.out.println("Encerrando o sistema...");
@@ -55,9 +55,12 @@ public class Main {
 			int opcao = scanner.nextInt();
 			scanner.nextLine(); // Limpa o buffer
 
+			//usar classes DAO para CRUD e normais para inserir,
+			//fazendo relacionamento entre a normal e a DAO
+
 			switch (opcao) {
                 case 1:
-                    Cliente.cadastrarCliente();
+                    Cliente.cadastrarCliente(scanner);
                     break;
                 case 2:
                     Livro.cadastrarLivro(scanner);
@@ -66,28 +69,28 @@ public class Main {
                     Emprestimo.cadastrarEmprestimo(scanner);
                     break;
                 case 4:
-                    Cliente.listarUsuarios();
+                    UsuarioDAO.listarUsuarios();
                     break;
                 case 5:
-                    Livro.listarLivros();
+                    LivroDAO.listarLivros();
                     break;
                 case 6:
-                    Emprestimo.listarEmprestimos();
+                    EmprestimoDAO.listarEmprestimos();
                     break;
                 case 7:
-                    Cliente.editarCliente(scanner);
+                    UsuarioDAO.editarCliente(scanner);
                     break;
                 case 8:
-                    Livro.editarLivro(scanner);
+                    LivroDAO.editarLivro(scanner);
                     break;
                 case 9:
-                    Cliente.excluirCliente(scanner);
+                    UsuarioDAO.excluirCliente(scanner);
                     break;
                 case 10:
-                    Livro.excluirLivro(scanner);
+                    LivroDAO.excluirLivro(scanner);
                     break;
                 case 11:
-                    Emprestimo.excluirEmprestimo(scanner);
+                    EmprestimoDAO.excluirEmprestimo(scanner);
                     break;
                 case 12:
                     System.out.println("Encerrando o sistema...");
