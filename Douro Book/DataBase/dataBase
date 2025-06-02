@@ -1,0 +1,79 @@
+-- MySQL Workbench Forward Engineering
+use mydb;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema test
+-- -----------------------------------------------------
+USE `mydb` ;
+
+CREATE TABLE IF NOT EXISTS `Usuario` (
+  `Id_usuario` INT NOT NULL AUTO_INCREMENT,
+  `CPF_usuario` VARCHAR(45) NOT NULL,
+  `Nome_usuario` VARCHAR(45) NOT NULL,
+  `Email_usuario` VARCHAR(45) NOT NULL,
+  `Telefone_usuario` VARCHAR(45) NOT NULL,
+  `Endereco_usuario` VARCHAR(45) NOT NULL,
+  `Senha_usuario` VARCHAR(45) NOT NULL,
+  `Funcao` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `idCliente_UNIQUE` (`CPF_usuario` ASC),
+  PRIMARY KEY (`Id_usuario`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Tabela 'Livro'
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Livro` (
+  `ISBN` VARCHAR(15) NOT NULL,
+  `Titulo` VARCHAR(45) NOT NULL,
+  `Autor` VARCHAR(45) NOT NULL,
+  `Genero` VARCHAR(45) NOT NULL,
+  `Editora` VARCHAR(45) NOT NULL,
+  `Numero_de_exemplares` INT NOT NULL,
+  `Ano_de_publicacao` YEAR NOT NULL,
+  PRIMARY KEY (`ISBN`),
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Tabela 'Emprestimo'
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Emprestimo` (
+  `Codigo_emprestimo` INT NOT NULL AUTO_INCREMENT,
+  `Usuario_Id_usuario` INT NOT NULL,
+  `Livro_ISBN` VARCHAR(15) NOT NULL,
+  `Data_de_inicio` DATE NOT NULL,
+  `Data_de_devolucao` DATE NOT NULL,
+  PRIMARY KEY (`Codigo_emprestimo`, `Usuario_Id_usuario`, `Livro_ISBN`),
+  INDEX `fk_Usuario_has_Livro_Livro1_idx` (`Livro_ISBN` ASC),
+  INDEX `fk_Usuario_has_Livro_Usuario_idx` (`Usuario_Id_usuario` ASC),
+  CONSTRAINT `fk_Usuario_has_Livro_Usuario`
+    FOREIGN KEY (`Usuario_Id_usuario`)
+    REFERENCES `Usuario` (`Id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Usuario_has_Livro_Livro1`
+    FOREIGN KEY (`Livro_ISBN`)
+    REFERENCES `Livro` (`ISBN`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
+-- Restaurar as configurações anteriores de verificações
+SET SQL_MODE = @OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
+
+select * from usuario;
+select * from emprestimo;
+select * from livro;
