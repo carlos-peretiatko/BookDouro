@@ -1,9 +1,12 @@
 package com.BookDouro.com.peretiatko.model;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Component
 @Entity
 public class Cliente {
     @Id
@@ -24,9 +27,27 @@ public class Cliente {
     @Column(name = "Senha_usuario")
     private String senha;
 	
+    //constructors
+    public Cliente() {
+    	
+    }
+    
+    public Cliente(int id, String cpf, String nome, String endereco, String telefone, String email, String funcao,
+			String senha) {
+		super();
+		this.id = id;
+		this.cpf = cpf;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+		this.funcao = funcao;
+		this.senha = senha;
+	}
+    
     // getters e setters
     
-    public int getId() {
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {

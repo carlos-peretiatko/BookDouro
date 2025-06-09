@@ -26,6 +26,23 @@ public class Livro {
 	@Column(name = "Ano_de_publicacao")
 	private int ano_Publicacao;
 
+	// cosntructors
+	public Livro() {
+
+	}
+
+	public Livro(String iSBN, String titulo, String autor, String genero, String editora, int numero_Exemplares,
+			int ano_Publicacao) {
+		super();
+		ISBN = iSBN;
+		Titulo = titulo;
+		Autor = autor;
+		Genero = genero;
+		Editora = editora;
+		this.numero_Exemplares = numero_Exemplares;
+		this.ano_Publicacao = ano_Publicacao;
+	}
+
 	// gets e setts
 	public String getISBN() {
 		return ISBN;
