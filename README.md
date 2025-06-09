@@ -113,5 +113,5 @@ Este projeto está licenciado sob a licença **MIT**. Veja o arquivo ```LICENSE`
 
 - Carlos Eduardo Peretiatko
 - André Nazário
-- Vinicius Custódio
+
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&section=footer&animation=fadeIn&fontAlignY=65"/>
