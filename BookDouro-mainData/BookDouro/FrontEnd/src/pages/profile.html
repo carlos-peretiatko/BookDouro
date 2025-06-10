@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - BookDouro</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://paroquiansdaconceicao.net.br/wp-content/uploads/2021/10/featured-livro.jpg" alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="icon">🏠</i>Página Inicial</a></li>
+                <li><a href="history.html"><i class="icon">📖</i>Histórico</a></li>
+                <li><a href="search.html"><i class="icon">🔍</i>Pesquisa</a></li>
+                <li><a href="access.html"><i class="icon">♿</i>Acessibilidade</a></li>
+                <li class="active"><a href="#"><i class="icon">👤</i>Meu Perfil</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="https://i.pinimg.com/736x/7a/29/b7/7a29b77e3daa1fc88e2d5748eae76080.jpg" alt="Foto do Usuário">
+            </div>
+            <div class="profile-info">
+                <h2>Nome do Usuário</h2>
+                <p>
+                    <strong>E-mail:</strong> 
+                    <span class="hidden-content">usuario@email.com</span> 
+                    <i class="icon-eye" data-original-text="usuario@email.com">👁️</i>
+                </p>
+                <p>
+                    <strong>Telefone:</strong> 
+                    <span class="hidden-content">(11) 99999-9999</span> 
+                    <i class="icon-eye" data-original-text="(11) 99999-9999">👁️</i>
+                </p>
+                <p><strong>Bio:</strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur aspernatur quos ex numquam dolorum fugiat. Optio et sint esse. Nihil rerum temporibus sapiente soluta excepturi deleniti quidem dolorem, atque tenetur!</p>
+            </div>
+        </div>
+
+        <section class="book-section">
+            <h2>Livros favoritos:</h2>
+            <div class="book-slider">
+                <button class="slider-arrow left">‹</button>
+                <div class="book-list">
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/4152pe7g7xL._AC_UF1000,1000_QL80_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/6175IU0qFgL.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/71fPFgNoQ0L._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/81v5OUA9KuL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/81iqH8dpjuL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/71DG9nPqKlL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/81w-GCfqtjL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/91aRbGB8IFL._AC_UL320_.jpg" alt="Livro"></div>
+                </div>
+                <button class="slider-arrow right">›</button>
+            </div>
+        </section>
+        
+        <section class="book-section">
+            <h2>Últimos livros emprestados:</h2>
+            <div class="book-slider">
+                <button class="slider-arrow left">‹</button>
+                <div class="book-list">
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/81ZubM-HrdL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/91r5G8RxqfL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/71x-i7sKSvL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/5109YEIX0kL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/715JOcuqSSL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/81h3BdV8lBL._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/61TaHURu27L._AC_UL320_.jpg" alt="Livro"></div>
+                    <div class="book-card"><img src="https://m.media-amazon.com/images/I/816a7zMD+FL._AC_UL320_.jpg" alt="Livro"></div>
+                </div>
+                <button class="slider-arrow right">›</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>

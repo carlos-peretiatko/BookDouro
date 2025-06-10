@@ -1,0 +1,34 @@
+
+ID	Nome		Descrição
+RN 1	Cadastro de Usuários/	 O sistema deve permitir o cadastro de usuários com os seguintes dados obrigatórios: nome completo, e-mail, CPF, telefone e endereço.
+RN 2	Permissão de Cadastro de Livros/	Apenas bibliotecários podem cadastrar, editar ou remover livros do sistema.
+RN 3	Autenticação de Usuários/	O sistema deve permitir que um usuário realize login com CPF e senha.
+RN 4	Controle de Acesso Administrativo/	Bibliotecários possuem acesso administrativo e podem gerenciar usuários, livros e assinaturas.
+RN 5	Recuperação de Senha/	O sistema deve permitir a recuperação de senha via e-mail.
+RN 6	Cadastro de Livros/	Todo livro cadastrado no sistema deve ter informações obrigatórias: título, autor, gênero, editora, número de exemplares e ISBN.
+RN 7	Remoção de Livros/	Um livro só pode ser removido do sistema se não estiver emprestado.
+RN 8	Atualização de Estoque/	O sistema deve atualizar automaticamente o estoque quando um livro for emprestado ou devolvido.
+RN 9	Pesquisa de Livros/	O sistema deve permitir a pesquisa de livros por título, autor ou gênero.
+RN 10	Autorização de Empréstimos/	Usuários podem emprestar livros desde que não tenham multas pendentes.
+RN 11	Limite de Empréstimos para Não Assinantes/	O limite máximo de empréstimos simultâneos para usuários sem assinatura é de **2 livros**.
+RN 12	Limite de Empréstimos para Assinantes/	O limite máximo de empréstimos simultâneos para usuários com assinatura é de **5 livros**.
+RN 13	Prazo de Devolução para Não Assinantes/	O prazo máximo de devolução para usuários sem assinatura é de **7 dias**.
+RN 14	Prazo de Devolução para Assinantes/	O prazo máximo de devolução para usuários com assinatura é de **15 dias**.
+RN 15	Restrição de Novos Empréstimos/	Um novo empréstimo só pode ser realizado após a devolução dos livros anteriores, caso o limite de empréstimos tenha sido atingido.
+RN 16	Condições para Renovação/	Usuários podem renovar um empréstimo, caso não haja reserva de outro usuário para o mesmo livro.
+RN 17	Período da Renovação/	A renovação adiciona um novo período de empréstimo igual ao original (exemplo: mais **7 dias para não assinantes** e **15 dias para assinantes**).
+RN 18	Restrições para Renovação/	Se o usuário não devolver um livro no prazo, ele não poderá fazer novos empréstimos até regularizar sua situação.
+RN 19	Multa para Não Assinantes/	Usuários **sem assinatura** que atrasarem a devolução pagam uma multa diária de **R$ 2,00 por livro**.  
+RN 20	Restrição de Empréstimos por Atraso/	Usuários **com assinatura** não pagam multa por atraso, mas perdem o direito a novos empréstimos até devolver os livros atrasados.
+RN 21	Cálculo de Multa/	O sistema deve calcular e exibir o valor total da multa antes do pagamento.
+RN 22	Métodos de Pagamento de Multa/	O pagamento da multa pode ser feito via **cartão de crédito, boleto ou Pix**.
+RN 23 	Liberação de Empréstimos Após Pagamento/	Após o pagamento da multa, o usuário volta a ter permissão para empréstimos.
+RN 24	Planos de Assinatura/	O sistema deve oferecer planos de assinatura mensal com pagamento recorrente.
+RN 25	Cancelamento de Assinatura/	O usuário pode cancelar a assinatura a qualquer momento, mas mantém os benefícios até o final do período já pago.
+RN 26	Benefícios da Assinatura/	Assinantes têm acesso a prazos maiores para devolução e não pagam multas por atraso.
+RN 27	Atualização de Planos de Assinatura/	O sistema deve permitir que assinantes alterem o plano de assinatura antes do próximo ciclo de pagamento.
+RN 28	Reserva de Livros Indisponíveis/	Usuários podem reservar um livro indisponível e serão notificados quando ele estiver disponível.
+RN 29	Validade da Reserva/	A reserva tem validade de **24 horas**, após a notificação, para retirada do livro.  
+RN 30	Cancelamento Automático de Reserva/	Se o usuário não retirar o livro no prazo, a reserva é cancelada automaticamente.
+RN 31	Notificações de Empréstimos de Multas/	O sistema deve enviar notificações por e-mail ou SMS sobre vencimentos de empréstimos, multas e disponibilidade de livros reservados.
+
