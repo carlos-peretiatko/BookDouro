@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa - BookDouro</title>
+    <link rel="stylesheet" href="search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://paroquiansdaconceicao.net.br/wp-content/uploads/2021/10/featured-livro.jpg" alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="icon">🏠</i>Página Inicial</a></li>
+                <li><a href="history.html"><i class="icon">📖</i>Histórico</a></li>
+                <li class="active"><a href="#"><i class="icon">🔍</i>Pesquisa</a></li>
+                <li><a href="access.html"><i class="icon">♿</i>Acessibilidade</a></li>
+                <li><a href="profile.html"><i class="icon">👤</i>Meu Perfil</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="search-header">
+            <h1>🔍 Pesquisar Livros</h1>
+            <form id="searchForm">
+                <input type="text" placeholder="Digite o título, autor ou gênero do livro..." required>
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+
+        <section class="search-results">
+            <h2>Resultados:</h2>
+            <div class="book-list">
+                <!--resultados-->
+            </div>
+        </section>
+    </main>
+
+    <script src="search.js"></script>
+</body>
+</html>
