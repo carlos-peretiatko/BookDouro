@@ -40,4 +40,6 @@ public class ClienteControl {
     public Optional<Cliente> buscarCliente(@PathVariable String cpf) {
         return clienteRepository.findById(cpf);
     }
+    
+    
 }

@@ -11,93 +11,85 @@ import jakarta.persistence.Id;
 public class Livro {
 
 	@Id
-	@Column(name = "ISBN")
-	private String ISBN;
-	@Column(name = "Titulo")
-	private String Titulo;
-	@Column(name = "Autor")
-	private String Autor;
-	@Column(name = "Genero")
-	private String Genero;
-	@Column(name = "Editora")
-	private String Editora;
-	@Column(name = "Numero_de_exemplares")
-	private int numero_Exemplares;
-	@Column(name = "Ano_de_publicacao")
-	private int ano_Publicacao;
+	private String isbn;
+	private String titulo;
+	private String autor;
+	private String categoria;
+	private String coverUrl;
+	private String descricao;
+	private Boolean disponivel;
 
 	// cosntructors
 	public Livro() {
 
 	}
 
-	public Livro(String iSBN, String titulo, String autor, String genero, String editora, int numero_Exemplares,
-			int ano_Publicacao) {
+	public Livro(String isbn, String titulo, String autor, String categoria, String coverUrl, String descricao,
+			Boolean disponivel) {
 		super();
-		ISBN = iSBN;
-		Titulo = titulo;
-		Autor = autor;
-		Genero = genero;
-		Editora = editora;
-		this.numero_Exemplares = numero_Exemplares;
-		this.ano_Publicacao = ano_Publicacao;
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.categoria = categoria;
+		this.coverUrl = coverUrl;
+		this.descricao = descricao;
+		this.disponivel = disponivel;
 	}
 
 	// gets e setts
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getTitulo() {
-		return Titulo;
+		return titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		Titulo = titulo;
+		this.titulo = titulo;
 	}
 
 	public String getAutor() {
-		return Autor;
+		return autor;
 	}
 
 	public void setAutor(String autor) {
-		Autor = autor;
+		this.autor = autor;
 	}
 
-	public String getGenero() {
-		return Genero;
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setGenero(String genero) {
-		Genero = genero;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
-	public String getEditora() {
-		return Editora;
+	public String getCoverUrl() {
+		return coverUrl;
 	}
 
-	public void setEditora(String editora) {
-		Editora = editora;
+	public void setCoverUrl(String coverUrl) {
+		this.coverUrl = coverUrl;
 	}
 
-	public int getNumero_Exemplares() {
-		return numero_Exemplares;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNumero_Exemplares(int numero_Exemplares) {
-		this.numero_Exemplares = numero_Exemplares;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public int getAno_Publicacao() {
-		return ano_Publicacao;
+	public Boolean getDisponivel() {
+		return disponivel;
 	}
 
-	public void setAno_Publicacao(int ano_Publicacao) {
-		this.ano_Publicacao = ano_Publicacao;
+	public void setDisponivel(Boolean disponivel) {
+		this.disponivel = disponivel;
 	}
-
 }

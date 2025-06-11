@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - BookDouro</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://paroquiansdaconceicao.net.br/wp-content/uploads/2021/10/featured-livro.jpg" alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="icon">🏠</i>Página Inicial</a></li>
+                <li><a href="history.html"><i class="icon">📖</i>Histórico</a></li>
+                <li><a href="search.html"><i class="icon">🔍</i>Pesquisa</a></li>
+                <li><a href="access.html"><i class="icon">♿</i>Acessibilidade</a></li>
+                <li class="active"><a href="#"><i class="icon">👤</i>Meu Perfil</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="https://i.pinimg.com/736x/7a/29/b7/7a29b77e3daa1fc88e2d5748eae76080.jpg" alt="Foto do Usuário">
+            </div>
+            <div class="profile-info">
+    <h2></h2>
+    <p>
+        <strong>E-mail:</strong> 
+        <span class="hidden-content" data-type="email"></span>
+        <i class="icon-eye">👁️</i>
+    </p>
+    <p>
+        <strong>Telefone:</strong> 
+        <span class="hidden-content" data-type="telefone"></span>
+        <i class="icon-eye">👁️</i>
+    </p>
+    <p><strong>Bio:</strong> <span class="profile-bio"></span></p>
+</div>
+
+<section class="book-section">
+    <h2>Livros favoritos:</h2>
+    <div class="book-slider">
+        <button class="slider-arrow left">‹</button>
+        <div class="book-list" id="favorites-list">
+            <!-- Lista de favoritos será inserida aqui -->
+        </div>
+        <button class="slider-arrow right">›</button>
+    </div>
+</section>
+
+<section class="book-section">
+    <h2>Últimos livros emprestados:</h2>
+    <div class="book-slider">
+        <button class="slider-arrow left">‹</button>
+        <div class="book-list" id="borrowed-list">
+            <!-- Lista de emprestados será inserida aqui -->
+        </div>
+        <button class="slider-arrow right">›</button>
+    </div>
+</section>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>

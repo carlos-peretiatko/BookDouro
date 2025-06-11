@@ -1,10 +1,16 @@
 package com.BookDouro.com.peretiatko.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Component
 @Entity
@@ -26,7 +32,8 @@ public class Cliente {
     private String funcao;
     @Column(name = "Senha_usuario")
     private String senha;
-	
+    
+    
     //constructors
     public Cliente() {
     	
@@ -44,6 +51,8 @@ public class Cliente {
 		this.funcao = funcao;
 		this.senha = senha;
 	}
+    
+    
     
     // getters e setters
     
