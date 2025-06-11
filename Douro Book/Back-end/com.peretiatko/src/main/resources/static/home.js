@@ -83,3 +83,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializePage();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('/api/livros')
+        .then(response => response.json())
+        .then(livros => {
+            const container = document.getElementById('livros-container');
+            container.innerHTML = '';
+            livros.forEach(livro => {
+                const card = document.createElement('div');
+                card.className = 'book-card';
+                card.innerHTML = `
+                    <h3>${livro.titulo}</h3>
+                    <p><strong>Autor:</strong> ${livro.autor}</p>
+                    <p><strong>Gênero:</strong> ${livro.genero}</p>
+                    <p><strong>Editora:</strong> ${livro.editora}</p>
+                    <p><strong>Ano:</strong> ${livro.ano_de_publicacao}</p>
+                `;
+                container.appendChild(card);
+            });
+        });
+});

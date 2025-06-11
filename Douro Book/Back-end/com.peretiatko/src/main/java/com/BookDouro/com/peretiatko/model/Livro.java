@@ -10,86 +10,92 @@ import jakarta.persistence.Id;
 @Entity
 public class Livro {
 
-	@Id
-	private String isbn;
-	private String titulo;
-	private String autor;
-	private String categoria;
-	private String coverUrl;
-	private String descricao;
-	private Boolean disponivel;
+    @Id
+	@Column(name = "ISBN")
+    private String isbn;
+	@Column(name = "Titulo")
+    private String titulo;
+	@Column(name = "Autor")
+    private String autor;
+	@Column(name = "Genero")
+    private String genero;
+	@Column(name = "Editora")
+    private String editora;
+	@Column(name = "Numero_de_exemplares")
+    private int numero_de_exemplares;
+	@Column(name = "Ano_de_publicacao")
+    private int ano_de_publicacao;
 
-	// cosntructors
-	public Livro() {
+    // Default constructor
+    public Livro() {
+    }
 
-	}
+    // Constructor with all fields
+    public Livro(String isbn, String titulo, String autor, String genero, 
+                 String editora, int numero_de_exemplares, int ano_de_publicacao) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.editora = editora;
+        this.numero_de_exemplares = numero_de_exemplares;
+        this.ano_de_publicacao = ano_de_publicacao;
+    }
 
-	public Livro(String isbn, String titulo, String autor, String categoria, String coverUrl, String descricao,
-			Boolean disponivel) {
-		super();
-		this.isbn = isbn;
-		this.titulo = titulo;
-		this.autor = autor;
-		this.categoria = categoria;
-		this.coverUrl = coverUrl;
-		this.descricao = descricao;
-		this.disponivel = disponivel;
-	}
+    // Getters and Setters
+    public String getIsbn() {
+        return isbn;
+    }
 
-	// gets e setts
-	public String getIsbn() {
-		return isbn;
-	}
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
+    public String getTitulo() {
+        return titulo;
+    }
 
-	public String getTitulo() {
-		return titulo;
-	}
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+    public String getAutor() {
+        return autor;
+    }
 
-	public String getAutor() {
-		return autor;
-	}
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
+    public String getGenero() {
+        return genero;
+    }
 
-	public String getCategoria() {
-		return categoria;
-	}
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
+    public String getEditora() {
+        return editora;
+    }
 
-	public String getCoverUrl() {
-		return coverUrl;
-	}
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
 
-	public void setCoverUrl(String coverUrl) {
-		this.coverUrl = coverUrl;
-	}
+    public int getNumero_de_exemplares() {
+        return numero_de_exemplares;
+    }
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public void setNumero_de_exemplares(int numero_de_exemplares) {
+        this.numero_de_exemplares = numero_de_exemplares;
+    }
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public int getAno_de_publicacao() {
+        return ano_de_publicacao;
+    }
 
-	public Boolean getDisponivel() {
-		return disponivel;
-	}
-
-	public void setDisponivel(Boolean disponivel) {
-		this.disponivel = disponivel;
-	}
+    public void setAno_de_publicacao(int ano_de_publicacao) {
+        this.ano_de_publicacao = ano_de_publicacao;
+    }
 }

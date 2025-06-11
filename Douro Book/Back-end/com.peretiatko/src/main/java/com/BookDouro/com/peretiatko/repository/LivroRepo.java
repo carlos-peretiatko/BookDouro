@@ -7,5 +7,5 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LivroRepo extends JpaRepository<Livro, String> {
-	List<Livro> findByCategoria(String categoria);
+	//List<Livro> findByCategoria(String categoria);
 }
