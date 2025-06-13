@@ -1,0 +1,326 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+}
+
+/* Sidebar fixa - mesmo estilo das outras páginas */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+nav ul li.active a {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a i {
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+
+/* Conteúdo principal */
+.content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.access-header {
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.access-header h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.access-header p {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+.access-container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.access-section {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.access-section:hover {
+    transform: translateY(-5px);
+}
+
+.access-section h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.access-section h2 i {
+    color: #3498db;
+}
+
+.settings-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Botões de tamanho de fonte */
+.size-button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e9ecef;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-button[data-size="small"] { font-size: 14px; }
+.size-button[data-size="medium"] { font-size: 18px; }
+.size-button[data-size="large"] { font-size: 22px; }
+
+.size-button:hover, .contrast-button:hover {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.size-button.active, .contrast-button.active {
+    background: #3498db;
+    color: #fff;
+    border-color: #3498db;
+}
+
+/* Botões de contraste */
+.contrast-button {
+    padding: 10px 20px;
+    border: 2px solid #e9ecef;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+/* Toggle switches */
+.settings-group.toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #e9ecef;
+    border-radius: 13px;
+    transition: all 0.3s ease;
+}
+
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: #3498db;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.toggle-label {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Atalhos de teclado */
+.keyboard-shortcuts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c3e50;
+}
+
+kbd {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 3px 6px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #495057;
+    box-shadow: 0 2px 0 #dee2e6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .sidebar .logo h1,
+    .sidebar nav ul li a span {
+        display: none;
+    }
+
+    .sidebar .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+
+    .access-container {
+        grid-template-columns: 1fr;
+    }
+
+    .keyboard-shortcuts {
+        overflow-x: auto;
+    }
+}
+
+/* Alto contraste (será ativado via JavaScript) */
+body.high-contrast {
+    background: #000;
+    color: #fff;
+}
+
+body.high-contrast .access-section,
+body.high-contrast .access-header {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+body.high-contrast .toggle-label,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast p {
+    color: #fff;
+}
+
+/* Fonte para dislexia (será ativada via JavaScript) */
+body.dyslexic-font {
+    font-family: 'OpenDyslexic', 'Inter', sans-serif;
+}

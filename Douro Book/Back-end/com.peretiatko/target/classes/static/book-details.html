@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Livro - BookDouro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="book-details.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg" 
+                 alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html"><i class="fas fa-home"></i>Página Inicial</a>
+                </li>
+                <li>
+                    <a href="history.html"><i class="fas fa-history"></i>Histórico</a>
+                </li>
+                <li>
+                    <a href="search.html"><i class="fas fa-search"></i>Pesquisa</a>
+                </li>
+                <li>
+                    <a href="access.html"><i class="fas fa-universal-access"></i>Acessibilidade</a>
+                </li>
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i>Meu Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="back-button">
+            <a href="javascript:history.back()" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+        </div>
+
+        <div class="book-details-container">
+            <div class="book-header">
+                <div class="book-cover">
+                    <img id="bookCover" src="" alt="Capa do Livro">
+                </div>
+                <div class="book-info">
+                    <h1 id="bookTitle"></h1>
+                    <div class="book-meta">
+                        <p><i class="fas fa-user"></i> Autor: <span id="bookAuthor"></span></p>
+                        <p><i class="fas fa-calendar"></i> Ano: <span id="bookYear"></span></p>
+                        <p><i class="fas fa-book"></i> Gênero: <span id="bookGenre"></span></p>
+                        <p><i class="fas fa-layer-group"></i> Exemplares disponíveis: <span id="bookCopies"></span></p>
+                    </div>
+                    <div class="book-actions">
+                        <button id="btnReservar" class="btn-primary">
+                            <i class="fas fa-bookmark"></i> Reservar
+                        </button>
+                        <button id="btnFavoritar" class="btn-secondary">
+                            <i class="far fa-heart"></i> Favoritar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-sections">
+                <section class="book-section">
+                    <h2><i class="fas fa-info-circle"></i> Sinopse</h2>
+                    <p id="bookSynopsis"></p>
+                </section>
+
+                <section class="book-section">
+                    <h2><i class="fas fa-info"></i> Detalhes</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">ISBN:</span>
+                            <span id="bookIsbn" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Editora:</span>
+                            <span id="bookPublisher" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Páginas:</span>
+                            <span id="bookPages" class="detail-value"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Idioma:</span>
+                            <span id="bookLanguage" class="detail-value"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="book-section">
+                    <h2><i class="fas fa-star"></i> Avaliações</h2>
+                    <div class="ratings-summary">
+                        <div class="rating-average">
+                            <span id="averageRating">0.0</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span id="totalRatings">(0 avaliações)</span>
+                        </div>
+                    </div>
+                    <div id="reviewsList" class="reviews-list">
+                        <!-- Reviews serão inseridas aqui via JavaScript -->
+                    </div>
+                    <button id="btnAddReview" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Adicionar Avaliação
+                    </button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Avaliação -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Avaliar Livro</h2>
+            <div class="rating-input">
+                <div class="stars">
+                    <i class="far fa-star" data-rating="1"></i>
+                    <i class="far fa-star" data-rating="2"></i>
+                    <i class="far fa-star" data-rating="3"></i>
+                    <i class="far fa-star" data-rating="4"></i>
+                    <i class="far fa-star" data-rating="5"></i>
+                </div>
+            </div>
+            <textarea id="reviewText" placeholder="Escreva sua avaliação aqui..."></textarea>
+            <button id="submitReview" class="btn-primary">Enviar Avaliação</button>
+        </div>
+    </div>
+
+    <script src="book-details.js"></script>
+</body>
+</html>

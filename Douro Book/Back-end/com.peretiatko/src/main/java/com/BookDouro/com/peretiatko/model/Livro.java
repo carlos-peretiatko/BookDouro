@@ -4,100 +4,173 @@ import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Component
 @Entity
 public class Livro {
 
-	@Id
-	@Column(name = "ISBN")
-	private String ISBN;
-	@Column(name = "Titulo")
-	private String Titulo;
-	@Column(name = "Autor")
-	private String Autor;
-	@Column(name = "Genero")
-	private String Genero;
-	@Column(name = "Editora")
-	private String Editora;
-	@Column(name = "Numero_de_exemplares")
-	private int numero_Exemplares;
-	@Column(name = "Ano_de_publicacao")
-	private int ano_Publicacao;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	// cosntructors
-	public Livro() {
+    @Column(name = "ISBN", unique = true)
+    private String isbn;
 
-	}
+    @Column(name = "Titulo")
+    private String titulo;
 
-	public Livro(String iSBN, String titulo, String autor, String genero, String editora, int numero_Exemplares,
-			int ano_Publicacao) {
-		super();
-		ISBN = iSBN;
-		Titulo = titulo;
-		Autor = autor;
-		Genero = genero;
-		Editora = editora;
-		this.numero_Exemplares = numero_Exemplares;
-		this.ano_Publicacao = ano_Publicacao;
-	}
+    @Column(name = "Autor")
+    private String autor;
 
-	// gets e setts
-	public String getISBN() {
-		return ISBN;
-	}
+    @Column(name = "Genero")
+    private String genero;
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
-	}
+    @Column(name = "Editora")
+    private String editora;
 
-	public String getTitulo() {
-		return Titulo;
-	}
+    @Column(name = "Numero_de_exemplares")
+    private int numeroDeExemplares;
 
-	public void setTitulo(String titulo) {
-		Titulo = titulo;
-	}
+    @Column(name = "Ano_de_publicacao")
+    private int anoDePublicacao;
 
-	public String getAutor() {
-		return Autor;
-	}
+    @Column(name = "Cover_URL")
+    private String imagemUrl;
 
-	public void setAutor(String autor) {
-		Autor = autor;
-	}
+    @Column(name = "Sinopse", length = 2000)
+    private String sinopse;
 
-	public String getGenero() {
-		return Genero;
-	}
+    @Column(name = "Numero_de_paginas")
+    private Integer numeroDePaginas;
 
-	public void setGenero(String genero) {
-		Genero = genero;
-	}
+    @Column(name = "Idioma")
+    private String idioma;
 
-	public String getEditora() {
-		return Editora;
-	}
+    // Default constructor
+    public Livro() {
+    }
 
-	public void setEditora(String editora) {
-		Editora = editora;
-	}
+    // Constructor with essential fields
+    public Livro(String isbn, String titulo, String autor, String genero, 
+                 String editora, int numeroDeExemplares, int anoDePublicacao, String imagemUrl) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.editora = editora;
+        this.numeroDeExemplares = numeroDeExemplares;
+        this.anoDePublicacao = anoDePublicacao;
+        this.imagemUrl = imagemUrl;
+    }
 
-	public int getNumero_Exemplares() {
-		return numero_Exemplares;
-	}
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
-	public void setNumero_Exemplares(int numero_Exemplares) {
-		this.numero_Exemplares = numero_Exemplares;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public int getAno_Publicacao() {
-		return ano_Publicacao;
-	}
+    public String getIsbn() {
+        return isbn;
+    }
 
-	public void setAno_Publicacao(int ano_Publicacao) {
-		this.ano_Publicacao = ano_Publicacao;
-	}
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getEditora() {
+        return editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public int getNumeroDeExemplares() {
+        return numeroDeExemplares;
+    }
+
+    public void setNumeroDeExemplares(int numeroDeExemplares) {
+        this.numeroDeExemplares = numeroDeExemplares;
+    }
+
+    public int getAnoDePublicacao() {
+        return anoDePublicacao;
+    }
+
+    public void setAnoDePublicacao(int anoDePublicacao) {
+        this.anoDePublicacao = anoDePublicacao;
+    }
+
+    public String getImagemUrl() {
+        return imagemUrl;
+    }
+
+    public void setImagemUrl(String imagemUrl) {
+        this.imagemUrl = imagemUrl;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public Integer getNumeroDePaginas() {
+        return numeroDePaginas;
+    }
+
+    public void setNumeroDePaginas(Integer numeroDePaginas) {
+        this.numeroDePaginas = numeroDePaginas;
+    }
+
+    public String getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", genero='" + genero + '\'' +
+                '}';
+    }
 }
