@@ -1,0 +1,102 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema test
+-- -----------------------------------------------------
+USE `mydb` ;
+
+CREATE TABLE IF NOT EXISTS `Usuario` (
+  `Id_usuario` INT NOT NULL AUTO_INCREMENT,
+  `CPF_usuario` VARCHAR(45) NOT NULL,
+  `Nome_usuario` VARCHAR(45) NOT NULL,
+  `Email_usuario` VARCHAR(45) NOT NULL,
+  `Telefone_usuario` VARCHAR(45) NOT NULL,
+  `Endereco_usuario` VARCHAR(45) NOT NULL,
+  `Senha_usuario` VARCHAR(45) NOT NULL,
+  `Funcao` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `idCliente_UNIQUE` (`CPF_usuario` ASC),
+  PRIMARY KEY (`Id_usuario`)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Tabela 'Livro'
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Livro` (
+  `ISBN` VARCHAR(15) NOT NULL,
+  `Titulo` VARCHAR(45) NOT NULL,
+  `Autor` VARCHAR(45) NOT NULL,
+  `Genero` VARCHAR(45) NOT NULL,
+  `Editora` VARCHAR(45) NOT NULL,
+  `Numero_de_exemplares` INT NOT NULL,
+  `Ano_de_publicacao` YEAR NOT NULL,
+  PRIMARY KEY (`ISBN`),
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC)
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Tabela 'Emprestimo'
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Emprestimo` (
+  `Codigo_emprestimo` INT NOT NULL AUTO_INCREMENT,
+  `Usuario_Id_usuario` INT NOT NULL,
+  `Livro_ISBN` VARCHAR(15) NOT NULL,
+  `Data_de_inicio` DATE NOT NULL,
+  `Data_de_devolucao` DATE NOT NULL,
+  PRIMARY KEY (`Codigo_emprestimo`, `Usuario_Id_usuario`, `Livro_ISBN`),
+  INDEX `fk_Usuario_has_Livro_Livro1_idx` (`Livro_ISBN` ASC),
+  INDEX `fk_Usuario_has_Livro_Usuario_idx` (`Usuario_Id_usuario` ASC),
+  CONSTRAINT `fk_Usuario_has_Livro_Usuario`
+    FOREIGN KEY (`Usuario_Id_usuario`)
+    REFERENCES `Usuario` (`Id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Usuario_has_Livro_Livro1`
+    FOREIGN KEY (`Livro_ISBN`)
+    REFERENCES `Livro` (`ISBN`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+) ENGINE = InnoDB;
+
+-- Restaurar as configurações anteriores de verificações
+SET SQL_MODE = @OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
+
+select * from cliente;
+
+select * from livro;
+
+-- 
+
+-- INSERT INTO livro (ISBN, Titulo, Autor, Genero, Editora, Numero_de_exemplares, Ano_de_publicacao, Cover_URL) VALUES
+-- Ficção
+-- ('9788532511010', 'O Senhor dos Anéis: A Sociedade do Anel', 'J.R.R. Tolkien', 'Ficção', 'Martins Fontes', 10, 2001, 'https://m.media-amazon.com/images/I/71ZLavBjpRL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788532511027', 'O Hobbit', 'J.R.R. Tolkien', 'Ficção', 'Martins Fontes', 8, 2019, 'https://m.media-amazon.com/images/I/91M9xPIf10L._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788550413532', 'Duna', 'Frank Herbert', 'Ficção', 'Aleph', 5, 2017, 'https://m.media-amazon.com/images/I/71uvGODDxRL._AC_UF1000,1000_QL80_.jpg'),
+
+-- Romance
+-- ('9788535914849', 'Dom Casmurro', 'Machado de Assis', 'Romance', 'Companhia das Letras', 15, 2016, 'https://m.media-amazon.com/images/I/81ZidsJJVVL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788535921892', 'Orgulho e Preconceito', 'Jane Austen', 'Romance', 'Companhia das Letras', 7, 2018, 'https://m.media-amazon.com/images/I/71pretLjKUL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788580578248', 'A Culpa é das Estrelas', 'John Green', 'Romance', 'Intrínseca', 12, 2014, 'https://m.media-amazon.com/images/I/71ZxUqs+yQL._AC_UF1000,1000_QL80_.jpg'),
+
+-- Terror
+-- ('9788556510785', 'It: A Coisa', 'Stephen King', 'Terror', 'Suma', 6, 2014, 'https://m.media-amazon.com/images/I/61P3h7TYKbL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788556510792', 'O Iluminado', 'Stephen King', 'Terror', 'Suma', 4, 2012, 'https://m.media-amazon.com/images/I/71RUt-50PHL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788556510808', 'Dracula', 'Bram Stoker', 'Terror', 'Darkside', 8, 2018, 'https://m.media-amazon.com/images/I/91D07epNJLL._AC_UF1000,1000_QL80_.jpg'),
+
+-- Técnico
+-- ('9788575227246', 'Clean Code', 'Robert C. Martin', 'Técnico', 'Alta Books', 10, 2020, 'https://m.media-amazon.com/images/I/41xShlnTZTL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788550804606', 'Estruturas de Dados e Algoritmos em Java', 'Robert Lafore', 'Técnico', 'Ciência Moderna', 5, 2017, 'https://m.media-amazon.com/images/I/71E+SB5mwzL._AC_UF1000,1000_QL80_.jpg'),
+-- ('9788575228289', 'Padrões de Projetos', 'Erich Gamma', 'Técnico', 'Bookman', 7, 2019, 'https://m.media-amazon.com/images/I/81gtKoapHFL._AC_UF1000,1000_QL80_.jpg');
