@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookDouro - Sua Biblioteca Digital</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg" 
+                 alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="#"><i class="fas fa-home"></i>Página Inicial</a>
+                </li>
+                <li>
+                    <a href="history.html"><i class="fas fa-history"></i>Histórico</a>
+                </li>
+                <li>
+                    <a href="search.html"><i class="fas fa-search"></i>Pesquisa</a>
+                </li>
+                <li>
+                    <a href="access.html"><i class="fas fa-universal-access"></i>Acessibilidade</a>
+                </li>
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i>Meu Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="welcome-section">
+            <h1>Bem-vindo à sua biblioteca digital</h1>
+            <p>Descubra novos mundos através da leitura</p>
+            
+            <div class="search-quick">
+                <input type="text" id="quickSearch" placeholder="Buscar livros...">
+                <button id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading-section">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Carregando livros...</p>
+        </div>
+        
+        <div id="bookCategories" class="book-categories">
+            <!-- Seções de categorias serão inseridas aqui -->
+        </div>
+
+        <div id="error" class="error-section" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <p>Erro ao carregar os livros. Por favor, tente novamente.</p>
+            <button id="retryButton" class="retry-button">
+                <i class="fas fa-redo"></i> Tentar Novamente
+            </button>
+        </div>
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>

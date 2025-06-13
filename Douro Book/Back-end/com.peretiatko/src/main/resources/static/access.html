@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade - BookDouro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="access.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg" 
+                 alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html"><i class="fas fa-home"></i>Página Inicial</a>
+                </li>
+                <li>
+                    <a href="history.html"><i class="fas fa-history"></i>Histórico</a>
+                </li>
+                <li>
+                    <a href="search.html"><i class="fas fa-search"></i>Pesquisa</a>
+                </li>
+                <li class="active">
+                    <a href="access.html"><i class="fas fa-universal-access"></i>Acessibilidade</a>
+                </li>
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i>Meu Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="access-header">
+            <h1>Configurações de Acessibilidade</h1>
+            <p>Personalize sua experiência para melhor atender às suas necessidades</p>
+        </div>
+
+        <div class="access-container">
+            <section class="access-section">
+                <h2><i class="fas fa-text-height"></i> Tamanho do Texto</h2>
+                <div class="settings-group">
+                    <button class="size-button" data-size="small">A</button>
+                    <button class="size-button active" data-size="medium">A</button>
+                    <button class="size-button" data-size="large">A</button>
+                </div>
+            </section>
+
+            <section class="access-section">
+                <h2><i class="fas fa-adjust"></i> Contraste</h2>
+                <div class="settings-group">
+                    <button class="contrast-button active" data-contrast="normal">
+                        <i class="fas fa-sun"></i> Normal
+                    </button>
+                    <button class="contrast-button" data-contrast="high">
+                        <i class="fas fa-moon"></i> Alto Contraste
+                    </button>
+                </div>
+            </section>
+
+            <section class="access-section">
+                <h2><i class="fas fa-cog"></i> Outras Configurações</h2>
+                <div class="settings-group toggles">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="animationsToggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Desativar Animações</span>
+                    </label>
+
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="textSpacingToggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Aumentar Espaçamento de Texto</span>
+                    </label>
+
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="dyslexicFontToggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Usar Fonte para Dislexia</span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="access-section">
+                <h2><i class="fas fa-keyboard"></i> Atalhos de Teclado</h2>
+                <div class="keyboard-shortcuts">
+                    <div class="shortcut-item">
+                        <kbd>Alt</kbd> + <kbd>1</kbd> : Ir para Página Inicial
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Alt</kbd> + <kbd>2</kbd> : Ir para Pesquisa
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Alt</kbd> + <kbd>3</kbd> : Ir para Histórico
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Alt</kbd> + <kbd>4</kbd> : Ir para Meu Perfil
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>/</kbd> : Focar na Barra de Pesquisa
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="access.js"></script>
+</body>
+</html>

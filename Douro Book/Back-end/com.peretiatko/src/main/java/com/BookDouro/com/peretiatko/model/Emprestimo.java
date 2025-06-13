@@ -7,35 +7,38 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Component
 @Entity
 public class Emprestimo {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Codigo_emprestimo")
-	private Integer codigoEmprestimo; // PK auto increment
-	@Column(name = "Usuario_Id_usuario")
-	private Integer usuarioId; // FK para Usuario (auto increment no banco)
-	@Column(name = "Livro_ISBN")
-	private String livroISBN; // FK para Livro
-	@Column(name = "Data_de_inicio")
-	private String dataInicio;
-	@Column(name = "Data_de_devolução")
-	private String dataDevolucao;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Codigo_emprestimo")
+    private Integer codigoEmprestimo; // PK auto increment
+    @Column(name = "Usuario_Id_usuario")
+    private Integer usuarioId; // FK para Usuario (auto increment no banco)
+    @ManyToOne
+    @JoinColumn(name = "Livro_id")
+    private Livro livro; // FK para Livro
+    @Column(name = "Data_de_inicio")
+    private String dataInicio;
+    @Column(name = "Data_de_devolução")
+    private String dataDevolucao;
 
-	//cosntructors
-	public Emprestimo() {
+    //cosntructors
+    public Emprestimo() {
 		
 	}
 	
-	public Emprestimo(Integer codigoEmprestimo, Integer usuarioId, String livroISBN, String dataInicio,
+	public Emprestimo(Integer codigoEmprestimo, Integer usuarioId, Livro livro, String dataInicio,
 			String dataDevolucao) {
 		super();
 		this.codigoEmprestimo = codigoEmprestimo;
 		this.usuarioId = usuarioId;
-		this.livroISBN = livroISBN;
+		this.livro = livro;
 		this.dataInicio = dataInicio;
 		this.dataDevolucao = dataDevolucao;
 	}
@@ -59,12 +62,12 @@ public class Emprestimo {
 		this.usuarioId = usuarioId;
 	}
 
-	public String getLivroISBN() {
-		return livroISBN;
+	public Livro getLivro() {
+		return livro;
 	}
 
-	public void setLivroISBN(String livroISBN) {
-		this.livroISBN = livroISBN;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 	public String getDataInicio() {

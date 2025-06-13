@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - BookDouro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg" 
+                 alt="BookDouro Logo">
+            <h1>BookDouro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html"><i class="fas fa-home"></i>Página Inicial</a>
+                </li>
+                <li class="active">
+                    <a href="history.html"><i class="fas fa-history"></i>Histórico</a>
+                </li>
+                <li>
+                    <a href="search.html"><i class="fas fa-search"></i>Pesquisa</a>
+                </li>
+                <li>
+                    <a href="access.html"><i class="fas fa-universal-access"></i>Acessibilidade</a>
+                </li>
+                <li>
+                    <a href="profile.html"><i class="fas fa-user"></i>Meu Perfil</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="content">
+        <div class="history-header">
+            <h1>Meu Histórico</h1>
+            <p>Acompanhe seus empréstimos atuais e anteriores</p>
+        </div>
+
+        <div class="history-container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Filtrar por status:</label>
+                    <select id="statusFilter">
+                        <option value="all">Todos</option>
+                        <option value="active">Em andamento</option>
+                        <option value="completed">Devolvidos</option>
+                        <option value="late">Atrasados</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Ordenar por:</label>
+                    <select id="orderBy">
+                        <option value="date-desc">Data (mais recente)</option>
+                        <option value="date-asc">Data (mais antiga)</option>
+                        <option value="title">Título do livro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="current-loans">
+                <h2>Empréstimos Atuais</h2>
+                <div class="loans-grid" id="currentLoans">
+                    <!-- Empréstimos atuais serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+
+            <div class="loan-history">
+                <h2>Histórico de Empréstimos</h2>
+                <div class="history-table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Livro</th>
+                                <th>Data Empréstimo</th>
+                                <th>Data Devolução</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- Histórico será inserido aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="history.js"></script>
+</body>
+</html>
