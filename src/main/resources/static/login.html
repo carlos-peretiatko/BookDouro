@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BookDouro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="content">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo">
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg" 
+                         alt="BookDouro Logo">
+                    <h1>BookDouro</h1>
+                </div>
+
+                <h2>Bem-vindo de volta!</h2>
+                <p>Entre com suas credenciais para acessar sua conta</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                    </div>
+
+                    <button type="submit">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Entrar
+                    </button>
+
+                    <div class="form-footer">
+                        <a href="register.html">Não tem uma conta? Cadastre-se</a>
+                        <a href="password.html">Esqueceu sua senha?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="access.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
