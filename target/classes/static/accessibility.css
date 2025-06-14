@@ -1,0 +1,438 @@
+/* Tamanhos de texto */
+body.text-small {
+    font-size: 14px !important;
+}
+
+body.text-small * {
+    font-size: 0.9em !important;
+}
+
+body.text-medium {
+    font-size: 16px !important;
+}
+
+body.text-medium * {
+    font-size: 1em !important;
+}
+
+body.text-large {
+    font-size: 18px !important;
+}
+
+body.text-large * {
+    font-size: 1.1em !important;
+}
+
+/* Alto contraste (Modo Escuro) */
+body.high-contrast {
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+body.high-contrast .book-details-container,
+body.high-contrast .book-section,
+body.high-contrast .book-header,
+body.high-contrast .book-sections,
+body.high-contrast .detail-item,
+body.high-contrast .modal-content {
+    background: #252525 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Cards e Containers */
+body.high-contrast .history-container,
+body.high-contrast .profile-card,
+body.high-contrast .statistics-card,
+body.high-contrast .loan-card,
+body.high-contrast .book-card,
+body.high-contrast .search-container,
+body.high-contrast .detail-item,
+body.high-contrast .review-item,
+body.high-contrast .filters,
+body.high-contrast .stat-item {
+    background: #252525 !important;
+    border-color: #404040 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Elementos interativos */
+body.high-contrast button,
+body.high-contrast .btn,
+body.high-contrast .action-button {
+    background: #2d4a8a !important;
+    color: #ffffff !important;
+    border: 1px solid #3d5a9a !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+body.high-contrast button:hover,
+body.high-contrast .btn:hover,
+body.high-contrast .action-button:hover {
+    background: #3d5a9a !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.high-contrast button:active,
+body.high-contrast .btn:active,
+body.high-contrast .action-button:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Inputs e campos de texto */
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #404040 !important;
+}
+
+body.high-contrast input:hover,
+body.high-contrast select:hover,
+body.high-contrast textarea:hover {
+    background: #333333 !important;
+    border-color: #505050 !important;
+}
+
+body.high-contrast input:focus,
+body.high-contrast select:focus,
+body.high-contrast textarea:focus {
+    border-color: #3d5a9a !important;
+    background: #333333 !important;
+    box-shadow: 0 0 0 2px rgba(61, 90, 154, 0.3) !important;
+    outline: none !important;
+}
+
+/* Select específico */
+body.high-contrast select {
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e0e0e0' d='M2 4l4 4 4-4'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    padding-right: 32px !important;
+}
+
+/* Checkbox e Radio */
+body.high-contrast input[type="checkbox"],
+body.high-contrast input[type="radio"] {
+    appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #404040 !important;
+    background: #2d2d2d !important;
+    cursor: pointer !important;
+    position: relative !important;
+    margin: 0 8px 0 0 !important;
+    padding: 0 !important;
+}
+
+body.high-contrast input[type="radio"] {
+    border-radius: 50% !important;
+}
+
+body.high-contrast input[type="checkbox"]:checked,
+body.high-contrast input[type="radio"]:checked {
+    background: #2d4a8a !important;
+    border-color: #3d5a9a !important;
+}
+
+body.high-contrast input[type="checkbox"]:checked::after {
+    content: "✓" !important;
+    position: absolute !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    left: 3px !important;
+    top: -1px !important;
+}
+
+body.high-contrast input[type="radio"]:checked::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 10px !important;
+    height: 10px !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    left: 3px !important;
+    top: 3px !important;
+}
+
+/* Toggle Switch */
+body.high-contrast .toggle-switch {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+}
+
+body.high-contrast .toggle-slider {
+    position: relative !important;
+    width: 50px !important;
+    height: 26px !important;
+    background: #404040 !important;
+    border-radius: 13px !important;
+    transition: all 0.3s ease !important;
+    margin-right: 8px !important;
+}
+
+body.high-contrast .toggle-slider:before {
+    content: '' !important;
+    position: absolute !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background: #e0e0e0 !important;
+    top: 3px !important;
+    left: 3px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.high-contrast input:checked + .toggle-slider {
+    background: #2d4a8a !important;
+}
+
+body.high-contrast input:checked + .toggle-slider:before {
+    transform: translateX(24px) !important;
+    background: #ffffff !important;
+}
+
+/* Cards e seções com hover */
+body.high-contrast .access-section,
+body.high-contrast .book-card,
+body.high-contrast .profile-card {
+    background: #252525 !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+body.high-contrast .access-section:hover,
+body.high-contrast .book-card:hover,
+body.high-contrast .profile-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+    border-color: #505050 !important;
+}
+
+/* Dropdown e Menu */
+body.high-contrast .dropdown-menu,
+body.high-contrast .menu {
+    background: #252525 !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 4px !important;
+    padding: 8px 0 !important;
+}
+
+body.high-contrast .dropdown-item,
+body.high-contrast .menu-item {
+    color: #e0e0e0 !important;
+    padding: 8px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+body.high-contrast .dropdown-item:hover,
+body.high-contrast .menu-item:hover {
+    background: #2d4a8a !important;
+    color: #ffffff !important;
+}
+
+/* Scrollbar personalizada */
+body.high-contrast *::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+body.high-contrast *::-webkit-scrollbar-track {
+    background: #252525 !important;
+}
+
+body.high-contrast *::-webkit-scrollbar-thumb {
+    background: #404040 !important;
+    border-radius: 5px !important;
+    border: 2px solid #252525 !important;
+}
+
+body.high-contrast *::-webkit-scrollbar-thumb:hover {
+    background: #505050 !important;
+}
+
+/* Imagens */
+body.high-contrast img {
+    filter: brightness(0.8) contrast(120%) !important;
+    opacity: 0.9 !important;
+}
+
+/* Links */
+body.high-contrast a {
+    color: #7aa2f7 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+body.high-contrast a:hover {
+    color: #9cc2ff !important;
+    text-decoration: underline !important;
+}
+
+/* Sidebar e navegação */
+body.high-contrast .sidebar {
+    background: #252525 !important;
+    border-right: 1px solid #404040 !important;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.high-contrast .sidebar .logo h1 {
+    color: #e0e0e0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.high-contrast nav ul li a {
+    color: #cccccc !important;
+    transition: all 0.3s ease !important;
+}
+
+body.high-contrast nav ul li a:hover {
+    background: #303030 !important;
+    color: #ffffff !important;
+}
+
+body.high-contrast nav ul li.active a {
+    background: #2d4a8a !important;
+    color: #ffffff !important;
+}
+
+/* Status e badges */
+body.high-contrast .available {
+    background: #2d5a3e !important;
+    color: #a8e6bc !important;
+}
+
+body.high-contrast .unavailable {
+    background: #5a2d2d !important;
+    color: #e6a8a8 !important;
+}
+
+body.high-contrast .status-active {
+    background: #2d4a8a !important;
+}
+
+body.high-contrast .status-completed {
+    background: #2d5a3e !important;
+}
+
+body.high-contrast .status-late {
+    background: #8a2d2d !important;
+}
+
+/* Tabelas */
+body.high-contrast table {
+    border-color: #404040 !important;
+}
+
+body.high-contrast th {
+    background: #252525 !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+body.high-contrast td {
+    border-color: #404040 !important;
+}
+
+body.high-contrast tr:nth-child(even) {
+    background: #222222 !important;
+}
+
+body.high-contrast .history-table th {
+    background: #2d2d2d !important;
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+body.high-contrast .history-table td {
+    color: #e0e0e0 !important;
+    border-color: #404040 !important;
+}
+
+body.high-contrast .history-table tr:hover {
+    background: #333333 !important;
+}
+
+/* Ícones */
+body.high-contrast i.fas,
+body.high-contrast i.far {
+    color: #7aa2f7 !important;
+}
+
+body.high-contrast .stat-item i {
+    background: rgba(52, 152, 219, 0.2) !important;
+    color: #7aa2f7 !important;
+}
+
+/* Modals */
+body.high-contrast .modal-content {
+    background: #252525 !important;
+    border: 1px solid #404040 !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Desativar animações */
+body.no-animations *,
+body.no-animations *::before,
+body.no-animations *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+/* Aumentar espaçamento */
+body.increased-spacing * {
+    line-height: 1.8 !important;
+    letter-spacing: 0.05em !important;
+    word-spacing: 0.16em !important;
+}
+
+body.increased-spacing p,
+body.increased-spacing h1,
+body.increased-spacing h2,
+body.increased-spacing h3,
+body.increased-spacing h4,
+body.increased-spacing h5,
+body.increased-spacing h6 {
+    margin-bottom: 1.5em !important;
+}
+
+body.increased-spacing li {
+    margin-bottom: 0.8em !important;
+}
+
+body.increased-spacing .book-card,
+body.increased-spacing .profile-card {
+    padding: 1.5em !important;
+}
+
+/* Fonte para dislexia */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body.dyslexic-font,
+body.dyslexic-font * {
+    font-family: 'OpenDyslexic', 'Inter', sans-serif !important;
+}
+
+/* Foco melhorado */
+*:focus {
+    outline: 3px solid #3498db !important;
+    outline-offset: 2px !important;
+}
